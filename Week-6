@@ -1,0 +1,18 @@
+import re
+
+print("Entity Chatbot")
+
+while True:
+    query = input("You: ")
+
+    if query == "exit":
+        print("Bot: Goodbye!")
+        break
+
+    # find numbers (like semester)
+    numbers = re.findall(r"\d+", query)
+
+    if numbers:
+        print("Bot: You asked for Semester:", numbers[0])
+    else:
+        print("Bot: No semester found")
