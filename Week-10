@@ -1,0 +1,19 @@
+print("Chatbot Analytics System")
+
+queries = []   # list to store user queries
+
+while True:
+    q = input("You: ")
+
+    if q == "exit":
+        break
+
+    queries.append(q)   # store query
+
+# after exit show analytics
+print("\n--- Analytics Report ---")
+print("Total Queries:", len(queries))
+
+print("\nUser Queries:")
+for i in queries:
+    print("-", i)
