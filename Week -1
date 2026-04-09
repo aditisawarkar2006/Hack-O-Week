@@ -1,0 +1,11 @@
+print("Student Details")
+
+name = "Aditi Sawarkar"
+age = 19
+year = "Second Year"
+college = "SIT Nagpur"
+
+print("Name:", name)
+print("Age:", age)
+print("Year:", year)
+print("College:", college)
