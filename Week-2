@@ -1,0 +1,23 @@
+import string
+
+print("Smart Chatbot")
+
+while True:
+    query = input("You: ")
+
+    if query == "exit":
+        print("Bot: Goodbye!")
+        break
+
+    # Preprocessing
+    query = query.lower()   # convert to lowercase
+    query = query.translate(str.maketrans('', '', string.punctuation))  # remove symbols
+
+    if "fees" in query:
+        print("Bot: Fees is 50000")
+    
+    elif "hostel" in query:
+        print("Bot: Hostel is available")
+    
+    else:
+        print("Bot: I don't understand")
