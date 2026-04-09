@@ -1,0 +1,41 @@
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+print("ML Chatbot")
+
+# Questions and Answers
+questions = [
+    "what is fees",
+    "hostel availability",
+    "admission date"
+]
+
+answers = [
+    "Fees is 50000 per year",
+    "Hostel is available",
+    "Admission starts in June"
+]
+
+# Convert text to vectors
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(questions)
+
+while True:
+    query = input("You: ")
+
+    if query == "exit":
+        print("Bot: Goodbye!")
+        break
+
+    # convert user input to vector
+    query_vec = vectorizer.transform([query])
+
+    # find similarity
+    similarity = cosine_similarity(query_vec, X)
+
+    # get best match
+    index = similarity.argmax()
+
+    print("Bot:", answers[index])
+
+
