@@ -1,0 +1,25 @@
+print("Context Chatbot")
+
+last_question = ""   # to store previous question
+
+while True:
+    query = input("You: ").lower()
+
+    if query == "exit":
+        print("Bot: Goodbye!")
+        break
+
+    # if user asks about exam
+    if "exam" in query:
+        last_question = "exam"
+        print("Bot: For which year?")
+
+    # if user replies with year
+    elif "year" in query or "1st" in query or "2nd" in query or "3rd" in query:
+        if last_question == "exam":
+            print("Bot: Exam for", query, "is in May")
+        else:
+            print("Bot: Please ask a question first")
+
+    else:
+        print("Bot: I don't understand")
