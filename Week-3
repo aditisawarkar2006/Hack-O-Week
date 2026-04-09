@@ -1,0 +1,27 @@
+import string
+
+print("Synonym Chatbot")
+
+# synonym lists
+fees_words = ["fees", "tuition", "payment"]
+hostel_words = ["hostel", "room", "accommodation"]
+
+while True:
+    query = input("You: ")
+
+    if query == "exit":
+        print("Bot: Goodbye!")
+        break
+
+    # preprocessing
+    query = query.lower()
+    query = query.translate(str.maketrans('', '', string.punctuation))
+
+    if any(word in query for word in fees_words):
+        print("Bot: Fees is 50000")
+    
+    elif any(word in query for word in hostel_words):
+        print("Bot: Hostel is available")
+    
+    else:
+        print("Bot: I don't understand")
