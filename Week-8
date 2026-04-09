@@ -1,0 +1,22 @@
+print("Final Chatbot with Fallback")
+
+while True:
+    query = input("You: ").lower()
+
+    if query == "exit":
+        print("Bot: Goodbye!")
+        break
+
+    if "fees" in query:
+        print("Bot: Fees is 50000 per year")
+
+    elif "hostel" in query:
+        print("Bot: Hostel is available")
+
+    elif "admission" in query:
+        print("Bot: Admission starts in June")
+
+    else:
+        # fallback response
+        print("Bot: Sorry, I don't understand your question.")
+        print("Bot: Please contact admin at admin@college.com")
