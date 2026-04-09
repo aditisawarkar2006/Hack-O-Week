@@ -1,0 +1,10 @@
+print("Multichannel Chatbot System")
+
+print("\nChatbot is available on:")
+
+print("1. Web Application")
+print("2. Mobile App")
+print("3. WhatsApp")
+print("4. Telegram")
+
+print("\nAll platforms connected successfully!")
